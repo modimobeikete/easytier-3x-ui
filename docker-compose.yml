@@ -1,6 +1,6 @@
 services:
   tailscale-3x-ui:
-    image: ghcr.io/modimobeikete/tailscale-3x-ui:main
+    image: ghcr.io/modimobeikete/easytier-3x-ui:main
     container_name: tailscale-3x-ui
     hostname: yourhostname
     volumes:
@@ -8,9 +8,8 @@ services:
       - $PWD/cert/:/root/cert/
       - /vol1/1000/docker/tailscale/state:/var/lib/tailscale # 映射状态目录
     environment:
-      XRAY_VMESS_AEAD_FORCED: "false"
-      X_UI_ENABLE_FAIL2BAN: "true"
-      TAILSCALE_AUTHKEY: "${TAILSCALE_AUTHKEY}"
+      MACHINE_ID: "${MACHINE_ID}"
+      EASYTIERWEB_USERNAME: "${EASYTIERWEB_USERNAME}"
     tty: true
     network_mode: host
     restart: unless-stopped
