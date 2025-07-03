@@ -2,10 +2,6 @@
 echo "Downloading easytier"
 wget -O /app/easytier.sh "https://raw.githubusercontent.com/EasyTier/EasyTier/main/script/install.sh" && bash /app/easytier.sh update --no-gh-proxy
 echo Easytier installed
-/app/tailscaled --tun=userspace-networking --socks5-server=localhost:1055 &
-/app/tailscale up --auth-key=${TAILSCALE_AUTHKEY} --hostname=cloudrun-app --ssh --accept-routes
-echo Tailscale started
-ALL_PROXY=socks5://localhost:1055/
 
 # Download x-ui with error checking
 echo "Downloading x-ui..."
