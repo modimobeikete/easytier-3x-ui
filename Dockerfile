@@ -14,11 +14,11 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN curl -L -o easytier-core.zip https://github.com/EasyTier/EasyTier/releases/download/v2.3.2/easytier-linux-x86_64-v2.3.2.zip \
-    && unzip -j -d /easytier easytier-core.zip \
+    && unzip -j -d /app easytier-core.zip \
     && rm -f easytier-core.zip \
-    && chmod +x /easytier/easytier-cli \
-    && chmod +x /easytier/easytier-web \
-    && chmod +x /easytier/easytier-core
+    && chmod +x /app/easytier-cli \
+    && chmod +x /app/easytier-web \
+    && chmod +x /app/easytier-core
 
 # Copy binary to production image.
 COPY --from=builder /app/start.sh /app/start.sh
