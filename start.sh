@@ -1,7 +1,4 @@
 #!/bin/sh
-echo "Downloading easytier"
-wget -O /app/easytier.sh "https://raw.githubusercontent.com/EasyTier/EasyTier/main/script/install.sh" && bash /app/easytier.sh install --no-gh-proxy --skip-folder-verify
-echo Easytier installed
 
 # Download x-ui with error checking
 echo "Downloading x-ui..."
@@ -44,5 +41,5 @@ if ! systemctl restart x-ui; then
 fi
 
 echo "x-ui installation completed successfully"
-/opt/easytier/easytier-core -w ${EASYTIERWEB_USERNAME} --machine-id ${MACHINE_ID} ${EXTRA_ARGS}
+/easytier/easytier-core -w ${EASYTIERWEB_USERNAME} --machine-id ${MACHINE_ID} ${EXTRA_ARGS}
 wait
