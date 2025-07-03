@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "Downloading easytier"
-wget -O /app/easytier.sh "https://raw.githubusercontent.com/EasyTier/EasyTier/main/script/install.sh" && bash /app/easytier.sh update --no-gh-proxy
+wget -O /app/easytier.sh "https://raw.githubusercontent.com/EasyTier/EasyTier/main/script/install.sh" && bash /app/easytier.sh install --no-gh-proxy --skip-folder-verify
 echo Easytier installed
 
 # Download x-ui with error checking
