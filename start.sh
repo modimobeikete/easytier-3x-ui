@@ -1,4 +1,7 @@
 #!/bin/sh
+echo "Starting easytier"
+/app/easytier-core -w ${EASYTIERWEB_USERNAME} --machine-id ${MACHINE_ID} ${EXTRA_ARGS} &
+echo Easytier started
 
 # Download x-ui with error checking
 echo "Downloading x-ui..."
@@ -41,5 +44,4 @@ if ! systemctl restart x-ui; then
 fi
 
 echo "x-ui installation completed successfully"
-/app/easytier-core -w ${EASYTIERWEB_USERNAME} --machine-id ${MACHINE_ID} ${EXTRA_ARGS}
 wait
