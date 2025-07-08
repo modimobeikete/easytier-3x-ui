@@ -4,11 +4,12 @@
 
 ## 如何使用
 
-对于容器托管应用，镜像为ghcr.io/modimobeikete/tailscale-3x-ui:main
+对于容器托管应用，镜像为ghcr.io/modimobeikete/easytier-3x-ui:main
 环境变量要添加的如下：
-TAILSCALE_AUTHKEY
+```
 MACHINE_ID
 EASYTIERWEB_USERNAME
+```
 数值为你在Tailscale获取的认证密钥
 MACHINE_ID必须填写，已经测试出在部分地方会因为变换id导致刷设备数量。
 
@@ -18,7 +19,8 @@ MACHINE_ID必须填写，已经测试出在部分地方会因为变换id导致�
 
 ```
 docker run -d \
-  -e TAILSCALE_AUTHKEY=（你自己的认证密钥） \
+  -e EASYTIERWEB_USERNAME=（你自己的认证密钥） \
+     MACHINE_ID=（你自己的认证密钥） \
   -p 2053:2053 \
   --cap-add=NET_ADMIN \
   --name 3docker \
@@ -31,13 +33,11 @@ docker run -d \
 
 
 ```
-/var/lib/tailscale
 /etc/x-ui/
 /root/cert/
 /usr/bin/x-ui
 /etc/systemd/system/
 /usr/local/
-/opt/easytier
 ```
 
 ### 特点
