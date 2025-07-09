@@ -20,7 +20,7 @@ MACHINE_ID必须填写，已经测试出在部分地方会因为变换id导致�
 ```
 docker run -d \
   -e EASYTIERWEB_USERNAME=（你自己的认证密钥） \
-     MACHINE_ID=（你自己的认证密钥） \
+  -e MACHINE_ID=（你自己的认证密钥） \
   -p 2053:2053 \
   --cap-add=NET_ADMIN \
   --name 3docker \
