@@ -44,4 +44,6 @@ if ! systemctl restart x-ui; then
 fi
 
 echo "x-ui installation completed successfully"
-wait
+# 保持容器运行
+echo "Container is running. Press Ctrl+C to stop."
+tail -f /dev/null
