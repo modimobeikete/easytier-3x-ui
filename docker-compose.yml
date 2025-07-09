@@ -1,12 +1,14 @@
 services:
   tailscale-3x-ui:
     image: ghcr.io/modimobeikete/easytier-3x-ui:main
-    container_name: tailscale-3x-ui
+    container_name: easytier-3x-ui
     hostname: yourhostname
     volumes:
       - $PWD/db/:/etc/x-ui/
       - $PWD/cert/:/root/cert/
-      - /vol1/1000/docker/tailscale/state:/var/lib/tailscale # 映射状态目录
+      - $PWD/bin/x-ui:/usr/bin/x-ui
+      - $PWD/systemd/system/:/etc/systemd/system/
+      - $PWD/local/:/usr/local/
     environment:
       MACHINE_ID: "${MACHINE_ID}"
       EASYTIERWEB_USERNAME: "${EASYTIERWEB_USERNAME}"
