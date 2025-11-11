@@ -13,7 +13,7 @@ RUN apt-get update && \
     apt-get install -y unzip&& \
     rm -rf /var/lib/apt/lists/*
 
-RUN curl -L -o easytier-core.zip https://github.com/EasyTier/EasyTier/releases/download/v2.4.2/easytier-linux-x86_64-v2.4.5.zip \
+RUN curl -L -o easytier-core.zip https://github.com/EasyTier/EasyTier/releases/download/v2.4.5/easytier-linux-x86_64-v2.4.5.zip \
     && unzip -j -d /app easytier-core.zip \
     && rm -f easytier-core.zip \
     && chmod +x /app/easytier-cli \
